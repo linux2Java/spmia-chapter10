@@ -42,7 +42,7 @@ public class OrganizationServiceController {
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.POST)
     public void saveOrganization(@RequestBody Organization org) {
-        logger.debug("123");
+        logger.debug("12ggg3");
         orgService.saveOrg( org );
     }
 
