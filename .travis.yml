@@ -29,6 +29,7 @@ before_install:
 - export BUILD_NAME=chapter10-$TRAVIS_BRANCH-$(date -u "+%Y%m%d%H%M%S")-$TRAVIS_BUILD_NUMBER
 - export CONTAINER_IP=52.194.214.179
 - export PLATFORM_TEST_NAME="chapter10-platform-tests"
+- sudo mkdir -p /etc/ecs
 script:
 - sh travis_scripts/tag_build.sh
 - sh travis_scripts/build_services.sh

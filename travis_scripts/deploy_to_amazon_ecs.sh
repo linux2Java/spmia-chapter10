@@ -1,6 +1,6 @@
 echo "Launching $BUILD_NAME IN AMAZON ECS"
-ecs-cli configure --region us-west-1 --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY --cluster spmia-tmx-dev
-mkdir -p /etc/ecs
+ecs-cli configure profile --profile-name  default --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY
+ecs-cli configure --cluster spmia-tmx-dev --default-launch-type EC2 --region ap-northeast-1 --config-name default
 cat << EOF >/etc/ecs/ecs.config
 ECS_CLUSTER=spmia-tmx-dev
 ECS_ENGINE_AUTH_TYPE=docker
