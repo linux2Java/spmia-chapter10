@@ -34,7 +34,7 @@ public class LicenseServiceController {
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
-
+        logger.debug("123");
         return licenseService.getLicensesByOrg(organizationId);
     }
 
@@ -42,6 +42,7 @@ public class LicenseServiceController {
     public License getLicenses( @PathVariable("organizationId") String organizationId,
                                 @PathVariable("licenseId") String licenseId) {
         logger.debug("Found tmx-correlation-id in license-service-controller: {} ", request.getHeader("tmx-correlation-id"));
+        logger.debug("123");
         return licenseService.getLicense(organizationId, licenseId);
     }
 
@@ -58,6 +59,7 @@ public class LicenseServiceController {
     @RequestMapping(value="{licenseId}",method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteLicenses( @PathVariable("licenseId") String licenseId, @RequestBody License license) {
+          logger.debug("123");
          licenseService.deleteLicense(license);
     }
 }

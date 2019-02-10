@@ -27,7 +27,7 @@ public class OrganizationServiceController {
     @RequestMapping(value="/{organizationId}",method = RequestMethod.GET)
     public Organization getOrganization( @PathVariable("organizationId") String organizationId) {
         logger.debug("Looking up data for org {}", organizationId);
-
+        logger.debug("123");
         Organization org = orgService.getOrg(organizationId);
         org.setContactName(org.getContactName());
         return org;
@@ -35,18 +35,21 @@ public class OrganizationServiceController {
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.PUT)
     public void updateOrganization( @PathVariable("organizationId") String orgId, @RequestBody Organization org) {
+        logger.debug("123");
         orgService.updateOrg( org );
 
     }
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.POST)
     public void saveOrganization(@RequestBody Organization org) {
-       orgService.saveOrg( org );
+        logger.debug("123");
+        orgService.saveOrg( org );
     }
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteOrganization( @PathVariable("orgId") String orgId,  @RequestBody Organization org) {
+        logger.debug("123");
         orgService.deleteOrg( org );
     }
 }
