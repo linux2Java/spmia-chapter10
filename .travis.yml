@@ -30,6 +30,7 @@ before_install:
 - export CONTAINER_IP=52.194.214.179
 - export PLATFORM_TEST_NAME="chapter10-platform-tests"
 - sudo mkdir -p /etc/ecs
+- sudo touch /etc/ecs/ecs.config
 script:
 - sh travis_scripts/tag_build.sh
 - sh travis_scripts/build_services.sh
